@@ -69,7 +69,7 @@ Resources:
                     },
                     "post_build": {
                       "commands": [
-                        "# Wait for ECR image scan to complete",
+                        "# Wait for ECR image scan to complete ",
                         "while [[ $(aws ecr describe-image-scan-findings --image-id imageTag=$IMAGE_TAG --repository-name $IMAGE_REPO_NAME | jq -r .imageScanStatus.status) != \"COMPLETE\" ]];do echo \"SCAN IS NOT YET COMPLETE...\"; sleep 3; done",
                         "# Capture ECR Image scan results",
                         "high=$(aws ecr describe-image-scan-findings --repository-name $IMAGE_REPO_NAME --image-id imageTag=$IMAGE_TAG | jq .imageScanFindings.findingSeverityCounts.HIGH)",
