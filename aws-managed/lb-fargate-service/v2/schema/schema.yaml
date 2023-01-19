@@ -3,7 +3,6 @@ schema:
     openapi: "3.0.0"
   service_input_type: "LoadBalancedServiceInput"
   pipeline_input_type: "PipelineInputs"
-
   types:
     LoadBalancedServiceInput:
       type: object
@@ -33,7 +32,7 @@ schema:
         image:
           type: string
           description: "The name/url of the container image"
-          default: "public.ecr.aws/z9d2n7e1/nginx:1.19.5"          
+          default: "public.ecr.aws/z9d2n7e1/nginx:1.19.5"
           minLength: 1
           maxLength: 200
         env_vars:
@@ -41,6 +40,12 @@ schema:
           description: "The Docker environment variables to use"
           default: "ENV_NAME_1=ENV_VALUE_1;ENV_NAME_2=ENV_VALUE_2"
           minLength: 1
+          maxLength: 200
+        service_backends:
+          type: string
+          description: "Service name(s) that your service communicates with"
+          default: ""
+          minLength: 0
           maxLength: 200
     PipelineInputs:
       type: object
