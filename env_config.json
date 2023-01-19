@@ -1,5 +1,5 @@
 {
-    "REPLACE_ME": {
+    "sample-vpc-environment-template": {
         "role": "arn:aws:iam:::REPLACE_ME:role/REPLACE_ME",
         "region": "us-east-1",
         "state_bucket":"REPLACE_ME"
